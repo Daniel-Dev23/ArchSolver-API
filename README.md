@@ -4,7 +4,7 @@
     <img src="./shared/assets/pictures/banner-archsolver-api.png" alt="Arch Solver API">
 </div>
 
-**[Arch Solver API]([repository])** es un framework orientado a JavaScript, que emplea una forma atersanal y personalizada de construír múltiples soluciones REST API con Node JS y TypeScript, tanto a pequeña como a gran escala. 
+**[Arch Solver API](https://github.com/Daniel-Dev23/ArchSolver-API.git)** es un framework orientado a JavaScript, que emplea una forma atersanal y personalizada de construír múltiples soluciones REST API con Node JS y TypeScript, tanto a pequeña como a gran escala. 
 
 El diseño de este marco de trabajo, integra las principales bases de diferentes arquitecturas, patrones de diseño y buenas practicas. Esto con el fin de generar un código organizado, modular y que respete la responsabilidad única de los recursos configurados en la aplicación.
 
@@ -35,7 +35,7 @@ Para instalar esta aplicación en su desarrollo, siga los siguientes pasos:
 3. ✨ **Clone el repositorio de `ArchSolver-API`**:
 
     ```sh
-    git clone [repository]
+    git clone https://github.com/Daniel-Dev23/ArchSolver-API.git
     ```
 
 4. ✨ **Nos situamos en la raíz del proyecto**:
@@ -107,7 +107,7 @@ La consola, debería regresar una respuesta como esta:
 💙 ArchSolver-API v0.1.0-alpha has been started...
 ```
 
- Si usted ha conseguido el resultado anterior, puede tomar la dirección URL proporcionada en la consola y hacer pruebas con un cliente API de confianza (**[Postman](https://www.postman.com/downloads/)**, **[Thunder Client](https://www.thunderclient.com/)**, **[Insomnia](https://insomnia.rest/)**, etc).
+> Si usted ha conseguido el resultado anterior, puede tomar la dirección URL proporcionada en la consola y hacer pruebas con un cliente API de confianza (**[Postman](https://www.postman.com/downloads/)**, **[Thunder Client](https://www.thunderclient.com/)**, **[Insomnia](https://insomnia.rest/)**, etc).
 
 ## **Tópicos**
 

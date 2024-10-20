@@ -6,7 +6,7 @@
 
 Mantener un repositorio organizado y consistente, es importante para tener un proyecto sano, en cuanto al manejo de control de versiones.
 
-Dicho esto, **[Arch Solver API]([repository])** recomienda la siguiente estrategía para la escritura y especificación de commits en este proyecto. El objetivo de estas convenciones, es mantener la organización y legibilidad de commits en el repositorio.
+Dicho esto, **[Arch Solver API](https://github.com/Daniel-Dev23/ArchSolver-API.git)** recomienda la siguiente estrategía para la escritura y especificación de commits en este proyecto. El objetivo de estas convenciones, es mantener la organización y legibilidad de commits en el repositorio.
 
 ## **Estructura**
 

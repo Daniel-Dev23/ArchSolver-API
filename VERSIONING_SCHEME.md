@@ -1,6 +1,6 @@
 # **Esquema de Versionamiento**
 
-**[Arch Solver API]([repository])** también recomienda un control de versionamiento.
+**[Arch Solver API](https://github.com/Daniel-Dev23/ArchSolver-API.git)** también recomienda un control de versionamiento.
 
 En esta sección, se describirá la convención para el versionamiento de productos de software, en diferentes facetas del ciclo de vida del desarrollo.
 
