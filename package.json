@@ -4,7 +4,7 @@
   "description": "Desarrollo artesanal y personalizada de soluciones REST API",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "ts-node-dev --respawn --watch .env src/index.ts"
+    "dev": "ts-node-dev --respawn -r tsconfig-paths/register --watch .env src/index.ts"
   },
   "keywords": [
     "REST API",
@@ -19,6 +19,7 @@
   "devDependencies": {
     "@types/convict": "^6.1.6",
     "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.7.2"
   },
   "dependencies": {

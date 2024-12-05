@@ -1,4 +1,4 @@
-import { env } from './dependencies/env/env.repository';
+import { env } from '@env/env.repository';
 
 /**
  * Punto de entrada a los servicios **REST API**.
