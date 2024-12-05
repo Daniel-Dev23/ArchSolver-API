@@ -6,7 +6,17 @@
   "scripts": {
     "dev": "node src/index.js"
   },
-  "keywords": ["REST API", "Node", "JS", "TS", "API", "Solutions"],
+  "keywords": [
+    "REST API",
+    "Node",
+    "JS",
+    "TS",
+    "API",
+    "Solutions"
+  ],
   "author": "Daniel-Dev23 <danieldev.info@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
 }
