@@ -4,7 +4,7 @@
   "description": "Desarrollo artesanal y personalizada de soluciones REST API",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "ts-node-dev --respawn src/index.ts"
+    "dev": "ts-node-dev --respawn --watch .env src/index.ts"
   },
   "keywords": [
     "REST API",
@@ -17,7 +17,12 @@
   "author": "Daniel-Dev23 <danieldev.info@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "@types/convict": "^6.1.6",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "convict": "^6.2.4",
+    "dotenv": "^16.4.7"
   }
 }

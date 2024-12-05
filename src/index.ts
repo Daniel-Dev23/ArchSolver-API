@@ -1,3 +1,4 @@
+import { env } from './dependencies/env/env.repository';
 
 /**
  * Punto de entrada a los servicios **REST API**.
@@ -8,7 +9,17 @@
  */
 const mainApp = (): void => {
 
-    console.log(`\n💙 ArchSolver-API v0.1.0-alpha ha sido inicializado...\n`);
+    /**
+     * Asignación de nombre de producto o aplicación.
+     */
+    const PRODUCT: string = env.get('root.PRODUCT');
+
+    /**
+     * Asignación de madurez del producto o aplicación.
+     */
+    const VERSION: string = env.get('root.VERSION');
+
+    console.log(`\n💙 ${PRODUCT} ${VERSION} ha sido inicializado...\n`);
 
 }
 
