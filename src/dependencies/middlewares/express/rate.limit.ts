@@ -23,17 +23,13 @@ interface IRateLimit {
  * @see {@link https://github.com/express-rate-limit/express-rate-limit|**Documentación de Express Rate Limit**}
  * @returns {RequestHandler} Configuración Rate Limit.
  */
-export const ExpressRateLimit = ( config: IRateLimit ): RequestHandler => {
-
-    return rateLimit({
-        windowMs: 15 * 60 * 1000, //? 15 minutos
-        max: 5,                   //? Límite de 5 solicitudes por IP
-        message: {
-            status: 429,
-            message: 'Se han detectado demasiadas solicitudes, por favor intente más tarde',
-        },
-        standardHeaders: true, //? Devuelve las cabeceras `RateLimit-*`
-        legacyHeaders: false,  //? Deshabilita las cabeceras `X-RateLimit-*`
-    });
-
-}
+export const ExpressRateLimit = ( config: IRateLimit ): RequestHandler => rateLimit({
+    windowMs: config.windowMs, 
+    max: config.max,
+    message: {
+        status: config.message.status,
+        message: config.message.message,
+    },
+    standardHeaders: config.standardHeaders, 
+    legacyHeaders: config.legacyHeaders,
+});

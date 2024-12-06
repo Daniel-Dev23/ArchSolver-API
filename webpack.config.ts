@@ -3,6 +3,11 @@ import { Configuration } from 'webpack';
 import TerserPlugin from 'terser-webpack-plugin';
 import nodeExternals from 'webpack-node-externals';
 
+/**
+ * Configuración de Webpack
+ * 
+ * @see {@link https://webpack.js.org/|**Documentación Webpack**}
+ */
 export default (env: any, argv: any): Configuration|undefined => {
 
     console.log(`🟢 Empaquetando módulos del proyecto...\n`);
