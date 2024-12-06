@@ -7,6 +7,6 @@ import { RequestHandler } from 'express';
  * @function
  * @name Cors
  * @see {@link https://github.com/expressjs/cors#readme|**Documentación CORS**}
- * @returns {RequestHandler} Cors
+ * @returns {RequestHandler} Configuración Cors
  */
 export const Cors = (): RequestHandler => cors({ origin: true });
