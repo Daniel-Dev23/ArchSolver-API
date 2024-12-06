@@ -1,3 +1,7 @@
+import express, { Express } from 'express';
+
+import { env } from '@env/env.repository';
+import { deployNetworks } from '@utils/networks/deploy.networks';
 import { IServer } from '@ts/interface.repository';
 
 /**
@@ -8,6 +12,12 @@ import { IServer } from '@ts/interface.repository';
  * @returns {IServer} Publicación de servicios **Auth**.
  */
 export const useSetupAuthServer = (): IServer => {
+
+    /**
+     * Instancia de servidor express.
+     * @see {@link https://expressjs.com/es/|**Documentación Express**}
+     */
+    const app: Express = express();
 
     /**
      * Publicación de recursos del servidor **Auth**.
@@ -23,8 +33,12 @@ export const useSetupAuthServer = (): IServer => {
         //? Precarga de rutas
         routes();
 
-        //TODO: Publicación de servidor
-        console.log('[🟢] Publicación de recursos...');
+        //? Publicación de servidor
+        deployNetworks({
+            environment: 'AUTH',
+            port: Number(env.get('port.AUTH_PORT')),
+            server: app
+        });
 
     }
 
