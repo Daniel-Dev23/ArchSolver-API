@@ -1,8 +1,9 @@
 import express, { Express } from 'express';
 
 import { env } from '@env/env.repository';
-import { deployNetworks } from '@utils/networks/deploy.networks';
+import { ExpressBodyParser } from '@middlewares/express/body.parser';
 import { IServer } from '@ts/interface.repository';
+import { deployNetworks } from '@utils/networks/deploy.networks';
 
 /**
  * Composable de propiedades y funciones para publicar recursos del servidor **App**.
@@ -50,8 +51,10 @@ export const useSetupAppServer = (): IServer => {
      */
     const middlewares = (): void => {
 
-        //TODO: Configuración de middlewares
-        console.log('[🔴] Asignación de middlewares...');
+        
+
+        app.use(ExpressBodyParser('json'));         //* Procesamiento de datos JSON
+        app.use(ExpressBodyParser('url-encode'));   //* Procesamiento de datos url-encode (form-data | x-www-form-urlencode)
 
     }
 
