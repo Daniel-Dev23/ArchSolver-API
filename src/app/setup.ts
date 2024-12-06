@@ -1,4 +1,15 @@
+import 'express-async-errors';
+import express, { Express } from 'express';
+
+import { env } from '@env/env.repository';
+import { Compression } from '@middlewares/compression/enable.compression';
+import { Cors } from '@middlewares/cors/enable.cors';
+import { ExpressBodyParser } from '@middlewares/express/body.parser';
+import { Helmet } from '@middlewares/helmet/enable.helmet';
+import { MorganRegister } from '@middlewares/morgan/morgan.register';
 import { IServer } from '@ts/interface.repository';
+import { TypeNodeEnv } from '@ts/type.repository';
+import { deployNetworks } from '@utils/networks/deploy.networks';
 
 /**
  * Composable de propiedades y funciones para publicar recursos del servidor **App**.
@@ -8,6 +19,12 @@ import { IServer } from '@ts/interface.repository';
  * @returns {IServer} Publicación de servicios **App**.
  */
 export const useSetupAppServer = (): IServer => {
+
+    /**
+     * Instancia de servidor express.
+     * @see {@link https://expressjs.com/es/|**Documentación Express**}
+     */
+    const app: Express = express();
 
     /**
      * Publicación de recursos del servidor **App**.
@@ -23,8 +40,12 @@ export const useSetupAppServer = (): IServer => {
         //? Precarga de rutas
         routes();
 
-        //TODO: Publicación de servidor
-        console.log('[🟢] Publicación de recursos...');
+        //? Publicación de servidor
+        deployNetworks({
+            environment: 'APP',
+            port: Number(env.get('port.APP_PORT')),
+            server: app
+        });
 
     }
 
@@ -36,8 +57,20 @@ export const useSetupAppServer = (): IServer => {
      */
     const middlewares = (): void => {
 
-        //TODO: Configuración de middlewares
-        console.log('[🔴] Asignación de middlewares...');
+        /**
+         * Asignación de ambiente de desarrollo.
+         */
+        const NODE_ENV: TypeNodeEnv = env.get('root.NODE_ENV') as TypeNodeEnv;
+
+        if ( NODE_ENV === 'development' ) {
+            app.use(MorganRegister('dev'));         //* Registro de información en peticiones HTTP
+        }
+
+        app.use(Cors());                            //* Habilitar CORS (Cross-Origin Resource Sharing)
+        app.use(Helmet());                          //* Habilitar seguridad en encabezados HTTP
+        app.use(ExpressBodyParser('json'));         //* Procesamiento de datos JSON
+        app.use(ExpressBodyParser('url-encode'));   //* Procesamiento de datos url-encode (form-data | x-www-form-urlencode)
+        app.use(Compression());                     //* Habilita la compresión de respuestas
 
     }
 

@@ -25,6 +25,20 @@ export const env = convict({
             default: "v0.1.0-alpha",
             env: 'VERSION'
         },
+    },
+    port: {
+        APP_PORT: {
+            doc: "Define el puerto del servidor APP.",
+            format: String,
+            default: "",
+            env: 'APP_PORT'
+        },
+        AUTH_PORT: {
+            doc: "Define el puerto del servidor AUTH.",
+            format: String,
+            default: "",
+            env: 'AUTH_PORT'
+        },
     }
 });
 
