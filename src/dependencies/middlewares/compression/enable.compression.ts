@@ -7,6 +7,6 @@ import { RequestHandler } from 'express';
  * @function
  * @name Compression
  * @see {@link https://www.npmjs.com/package/compression|**Documentación Compression**}
- * @returns {Function} Configuración en Encabezados de Seguridad
+ * @returns {Function} Optimización de Respuestas
  */
 export const Compression = (): RequestHandler => compression();
