@@ -1,6 +1,7 @@
 import express, { Express } from 'express';
 
 import { env } from '@env/env.repository';
+import { Cors } from '@middlewares/cors/enable.cors';
 import { ExpressBodyParser } from '@middlewares/express/body.parser';
 import { IServer } from '@ts/interface.repository';
 import { deployNetworks } from '@utils/networks/deploy.networks';
@@ -51,6 +52,7 @@ export const useSetupAuthServer = (): IServer => {
      */
     const middlewares = (): void => {
 
+        app.use(Cors());                            //* Habilitar CORS (Cross-Origin Resource Sharing)
         app.use(ExpressBodyParser('json'));         //* Procesamiento de datos JSON
         app.use(ExpressBodyParser('url-encode'));   //* Procesamiento de datos url-encode (form-data | x-www-form-urlencode)
 
