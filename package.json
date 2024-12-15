@@ -4,7 +4,7 @@
   "description": "Desarrollo artesanal y personalizada de soluciones REST API con TS",
   "main": "src/index.js",
   "scripts": {
-    "dev": "node src/index.js"
+    "dev": "ts-node-dev --respawn src/index.ts"
   },
   "keywords": [
     "REST API",
@@ -15,5 +15,9 @@
     "Solutions"
   ],
   "author": "Daniel-Dev23 <danieldev.info@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.7.2"
+  }
 }
