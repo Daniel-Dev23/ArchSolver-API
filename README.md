@@ -1,10 +1,10 @@
-# **Arch Solver API**
+# **Arch Solver API TS**
 
 <div align="center">
     <img src="./shared/assets/pictures/banner.png" alt="Arch Solver API">
 </div>
 
-**[Arch Solver API]()** es un marco de trabajo con esta versión orientada a JavaScript con tipado estricto con TypeScript, que emplea una forma atersanal y personalizada de construír múltiples soluciones REST API con Node JS, tanto a pequeña como a gran escala. 
+**[Arch Solver API](https://github.com/Daniel-Dev23/ArchSolver-API)** es un marco de trabajo con esta versión orientada a JavaScript con tipado estricto con TypeScript, que emplea una forma atersanal y personalizada de construír múltiples soluciones REST API con Node JS, tanto a pequeña como a gran escala. 
 
 El diseño de este marco de trabajo, integra las principales bases de diferentes arquitecturas, patrones de diseño y buenas practicas. Esto con el fin de generar un código organizado, modular y que respete la responsabilidad única de los recursos configurados en la aplicación.
 
@@ -35,13 +35,13 @@ Para instalar esta aplicación en su desarrollo, siga los siguientes pasos:
 3. ✨ **Clone el repositorio de `ArchSolver-API`**:
 
     ```sh
-    git clone <pending...>
+    git clone https://github.com/Daniel-Dev23/ArchSolver-API/tree/ArchSolver-API-TS
     ```
 
 4. ✨ **Nos situamos en la raíz del proyecto**:
 
     ```sh
-    cd "ArchSolver-API-JS"
+    cd "ArchSolver-API-TS"
     ```
 
 5. ✨ **Instalamos los módulos de Node JS**:

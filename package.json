@@ -1,0 +1,19 @@
+{
+  "name": "archsolver-api",
+  "version": "0.1.0",
+  "description": "Desarrollo artesanal y personalizada de soluciones REST API con TS",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "node src/index.js"
+  },
+  "keywords": [
+    "REST API",
+    "Node",
+    "JS",
+    "TS",
+    "API",
+    "Solutions"
+  ],
+  "author": "Daniel-Dev23 <danieldev.info@gmail.com>",
+  "license": "ISC"
+}
