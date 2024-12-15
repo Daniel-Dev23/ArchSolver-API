@@ -4,7 +4,7 @@
     <img src="./shared/assets/pictures/banner.png" alt="Arch Solver API">
 </div>
 
-**[Arch Solver API]()** es un marco de trabajo con esta versión orientada a JavaScript, que emplea una forma atersanal y personalizada de construír múltiples soluciones REST API con Node JS, tanto a pequeña como a gran escala. 
+**[Arch Solver API]()** es un marco de trabajo con esta versión orientada a JavaScript con tipado estricto con TypeScript, que emplea una forma atersanal y personalizada de construír múltiples soluciones REST API con Node JS, tanto a pequeña como a gran escala. 
 
 El diseño de este marco de trabajo, integra las principales bases de diferentes arquitecturas, patrones de diseño y buenas practicas. Esto con el fin de generar un código organizado, modular y que respete la responsabilidad única de los recursos configurados en la aplicación.
 
