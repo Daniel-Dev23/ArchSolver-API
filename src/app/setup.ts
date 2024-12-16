@@ -5,6 +5,7 @@ import { env } from '@env/envs.handler';
 import { Compression } from '@middlewares/compression/enable.compression';
 import { Cors } from '@middlewares/cors/enable.cors';
 import { ExpressBodyParser } from '@middlewares/express/body.parser';
+import { Helmet } from '@middlewares/helmet/enable.helmet';
 
 /**
  * Composable de propiedades y funciones para publicar recursos del servidor **App**.
@@ -55,6 +56,7 @@ export const useSetupAppServer = (): IGlobalSetupServer => {
     const middlewares = (): void => {
 
         app.use(Cors());                            //* Habilitar CORS (Cross-Origin Resource Sharing)
+        app.use(Helmet());                          //* Habilitar seguridad en encabezados HTTP
         app.use(ExpressBodyParser('json'));         //* Procesamiento de datos JSON
         app.use(ExpressBodyParser('url-encode'));   //* Procesamiento de datos url-encode (form-data | x-www-form-urlencode)
         app.use(Compression());                     //* Habilita la compresión de respuestas
