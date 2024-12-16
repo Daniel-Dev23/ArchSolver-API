@@ -23,7 +23,7 @@ export const WelcomeRouter = (): Router => {
     };
 
     /**
-     * * 👉🏻 Ingrese aquí la descripción de su servicio...
+     * * Servicio que realiza una prueba de conexión.
      * 
      * @function
      * @name GET/welcome
