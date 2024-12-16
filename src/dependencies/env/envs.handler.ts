@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import { z } from 'zod';
 
-import { regex } from '../utils/regex/regex.handler';
+import { regex } from '@utils/regex/regex.handler';
 
 //? --- Precarga de variables de entorno desde el .env ---
 dotenv.config();

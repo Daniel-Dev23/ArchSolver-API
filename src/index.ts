@@ -1,5 +1,4 @@
-import { env } from './dependencies/env/envs.handler';
-
+import { env } from '@env/envs.handler';
 
 /**
  * Punto de entrada a los servicios **REST API**.
@@ -8,6 +7,7 @@ import { env } from './dependencies/env/envs.handler';
  * @name mainApp
  * @see {@link https://www.npmjs.com/package/typescript|**Documentación Typescript**}
  * @see {@link https://www.npmjs.com/package/ts-node-dev|**Documentación Ts-node-dev**}
+ * @see {@link https://www.npmjs.com/package/tsconfig-paths|**Documentación Tsconfig-paths**}
  * @returns Inicialización de servidor y servicios backend.
  */
 const mainApp = (): void => {
