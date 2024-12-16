@@ -1,7 +1,8 @@
 import express, { Express } from 'express';
 
 import { env } from '@env/envs.handler';
-import { ExpressBodyParser } from '@middlewares/express/body.parser.handler';
+import { Cors } from '@middlewares/cors/enable.cors';
+import { ExpressBodyParser } from '@middlewares/express/body.parser';
 
 /**
  * Composable de propiedades y funciones para publicar recursos del servidor **App**.
@@ -51,6 +52,7 @@ export const useSetupAppServer = (): IGlobalSetupServer => {
      */
     const middlewares = (): void => {
 
+        app.use(Cors());                            //* Habilitar CORS (Cross-Origin Resource Sharing)
         app.use(ExpressBodyParser('json'));         //* Procesamiento de datos JSON
         app.use(ExpressBodyParser('url-encode'));   //* Procesamiento de datos url-encode (form-data | x-www-form-urlencode)
 

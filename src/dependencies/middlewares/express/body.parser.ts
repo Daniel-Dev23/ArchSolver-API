@@ -8,7 +8,7 @@ import { TypeParser, TypeParserFactory } from './types/express.types';
  * @name ExpressBodyParser
  * @see {@link https://expressjs.com/en/api.html#express|**Documentación Parser Express**}
  * @param typeParser - Tipo de parseo de cuerpo en una petición HTTP.
- * @returns {RequestHandler} Parseo de Datos
+ * @returns Parseo de Datos
  */
 export const ExpressBodyParser = ( typeParser: TypeParser ): RequestHandler => {
 
