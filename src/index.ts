@@ -1,5 +1,8 @@
 import { env } from '@env/envs.handler';
 
+import { useSetupAppServer } from './app/setup';
+import { useSetupAuthServer } from './auth/setup';
+
 /**
  * Punto de entrada a los servicios **REST API**.
  * 
@@ -21,6 +24,13 @@ const mainApp = (): void => {
      * Asignación de versionamiento de producto.
      */
     const VERSION: string = env!.VERSION;
+
+    //* --- Publicación de servicios ---
+    const { deploy: deployServerApp } = useSetupAppServer();
+    const { deploy: deployServerAuth } = useSetupAuthServer();
+
+    deployServerApp();
+    deployServerAuth();
 
     console.log(`\n🟢 ${BRAND} ${VERSION} ha sido inicializado...\n`);
 

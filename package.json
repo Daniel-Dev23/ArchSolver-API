@@ -4,7 +4,7 @@
   "description": "Desarrollo artesanal y personalizada de soluciones REST API con TS",
   "main": "src/index.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn -r tsconfig-paths/register --watch .env src/index.ts",
+    "dev": "ts-node-dev --files --respawn -r tsconfig-paths/register --watch .env src/index.ts",
     "build": "webpack --config webpack.config.ts --mode production",
     "start": "node ./shared/dist/bundle.prod.min.js"
   },
@@ -19,7 +19,12 @@
   "author": "Daniel-Dev23 <danieldev.info@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "@types/compression": "^1.7.5",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/morgan": "^1.9.9",
     "@types/webpack-node-externals": "^3.0.4",
+    "morgan": "^1.10.0",
     "terser-webpack-plugin": "^5.3.11",
     "ts-loader": "^9.5.1",
     "ts-node-dev": "^2.0.0",
@@ -30,7 +35,13 @@
     "webpack-node-externals": "^3.0.0"
   },
   "dependencies": {
+    "compression": "^1.7.5",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-async-errors": "^3.1.1",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
     "zod": "^3.24.1"
   }
 }

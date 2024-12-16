@@ -31,6 +31,7 @@
     "baseUrl": "./src",                                  /* Specify the base directory to resolve non-relative module names. */
     "paths": {
       "@env/*": ["dependencies/env/*"],
+      "@middlewares/*": ["dependencies/middlewares/*"],
       "@utils/*": ["dependencies/utils/*"]
     },                                                   /* Specify a set of entries that re-map imports to additional lookup locations. */
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
@@ -109,8 +110,12 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
+  "ts-node": {
+    "files": true
+  },
   "include": [
     "src/**/*",
+    "global.d.ts"
   ],
   "exclude": ["node_modules"]
 }
