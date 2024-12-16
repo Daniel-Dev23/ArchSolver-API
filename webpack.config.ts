@@ -6,7 +6,13 @@ import nodeExternals from 'webpack-node-externals';
 /**
  * Configuración de Webpack.
  * 
- * @see {@link https://webpack.js.org/|**Documentación Webpack**}
+ * @see {@link https://webpack.js.org/|**Documentación Oficial Webpack**}
+ * @see {@link https://www.npmjs.com/package/webpack|**Documentación NPM Webpack**}
+ * @see {@link https://www.npmjs.com/package/webpack|**Documentación NPM Webpack**}
+ * @see {@link https://www.npmjs.com/package/webpack-cli|**Documentación CLI Webpack**}
+ * @see {@link https://www.npmjs.com/package/webpack-node-externals|**Documentación Node Externals**}
+ * @see {@link https://www.npmjs.com/package/@types/webpack-node-externals|**Documentación Tipado Node Externals**}
+ * @see {@link https://www.npmjs.com/package/ts-loader|**Documentación Ts-loader**}
  */
 export default (env: any, argv: any): Configuration|undefined => {
 
