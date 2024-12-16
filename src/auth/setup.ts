@@ -2,6 +2,7 @@ import 'express-async-errors';
 import express, { Express } from 'express';
 
 import { env } from '@env/envs.handler';
+import { ErrorHandler, NotFound } from '@errors/custom.errors';
 import { Compression } from '@middlewares/compression/enable.compression';
 import { Cors } from '@middlewares/cors/enable.cors';
 import { ExpressBodyParser } from '@middlewares/express/body.parser';
@@ -90,7 +91,15 @@ export const useSetupAuthServer = (): IGlobalSetupServer => {
      * @function
      * @name routes
      */
-    const routes = (): void => {}
+    const routes = (): void => {
+
+        //* Controlar peticiones desconocidas
+        app.use(NotFound);
+
+        //* Manjedor de errores central
+        app.use(ErrorHandler); 
+        
+    }
 
     return { deploy };
 
