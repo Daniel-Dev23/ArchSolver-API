@@ -7,6 +7,7 @@ import { Cors } from '@middlewares/cors/enable.cors';
 import { ExpressBodyParser } from '@middlewares/express/body.parser';
 import { Helmet } from '@middlewares/helmet/enable.helmet';
 import { MorganRegister } from '@middlewares/morgan/morgan.register';
+import { deployNetworks } from '@utils/networks/deploy.networks';
 
 /**
  * Composable de propiedades y funciones para publicar recursos del servidor **App**.
@@ -46,7 +47,22 @@ export const useSetupAppServer = (): IGlobalSetupServer => {
      * @function
      * @name deploy
      */
-    const deploy = (): void => {}
+    const deploy = (): void => {
+
+        //? Invocación de middlewares
+        middlewares();
+
+        //? Carga de rutas
+        routes();
+
+        //? Publicación de servidor
+        deployNetworks({
+            environment: 'APP',
+            port: APP_PORT,
+            server: app
+        });
+
+    }
     
     /**
      * Asignación de middlewares al servidor **App**.
