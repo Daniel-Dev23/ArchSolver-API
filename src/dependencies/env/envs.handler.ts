@@ -31,7 +31,7 @@ const EnvSchema = z.object({
     ENABLE_SHOW_ERROR: z
         .enum(
             ["YES", "NO"],
-            { message: "La variable 'ENABLE_SHOW_ERROR debe ser 'YES' o 'NO'" }
+            { message: "La variable 'ENABLE_SHOW_ERROR' debe ser 'YES' o 'NO'" }
         )
     ,
     
@@ -51,6 +51,24 @@ const EnvSchema = z.object({
             { message: "La variable 'AUTH_PORT' debe tener un número de puerto asignado" }
         )
         .transform(Number)
+    ,
+
+    //* --- BASE DE DATOS ---
+    DB_CONNECTION: z
+        .string({ required_error: "La variable 'DB_CONNECTION' no ha sido asignada" })
+        .min(1, { message: "La variable 'DB_CONNECTION' debe tener un nombre de marca o producto asignado" })
+    ,
+    DB_ENABLE_ENCRYPT: z
+        .enum(
+            ["YES", "NO"],
+            { message: "La variable 'DB_ENABLE_ENCRYPT' debe ser 'YES' o 'NO'" }
+        )
+    ,
+    DB_ENABLE_LOGS: z
+        .enum(
+            ["YES", "NO"],
+            { message: "La variable 'DB_ENABLE_LOGS' debe ser 'YES' o 'NO'" }
+        )
     ,
 });
 
