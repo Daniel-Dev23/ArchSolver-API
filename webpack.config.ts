@@ -66,6 +66,7 @@ export default (env: any, argv: any): Configuration|undefined => {
             alias: {
                 '@env': path.resolve(__dirname, 'src/dependencies/env/'),
                 '@errors': path.resolve(__dirname, 'src/dependencies/errors/'),
+                '@helpers': path.resolve(__dirname, 'src/dependencies/helpers/'),
                 '@middlewares': path.resolve(__dirname, 'src/dependencies/middlewares/'),
                 '@utils': path.resolve(__dirname, 'src/dependencies/utils/'),
             },

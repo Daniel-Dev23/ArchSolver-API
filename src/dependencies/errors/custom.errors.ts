@@ -1,10 +1,10 @@
 import { NextFunction, Request, Response } from "express";
 
 import { env } from '@env/envs.handler';
+import { errorLogging } from '@helpers/logger/error.logging';
 import { errorScheme } from '@utils/schemes/error.scheme';
 
 import { Exception } from './exception.error';
-// import { errorLogging } from '@helpers/logger/error.logging';
 
 /**
  * Middleware que coordina el manejador de errores de la aplicación.
@@ -52,7 +52,7 @@ export const ErrorHandler = (error: any, req: Request, res: Response, next: Next
             errorCaught = ServerError(error);
 
             //* --- Registro de error ---
-            // errorLogging(error);
+            errorLogging(error);
         }
     }
 

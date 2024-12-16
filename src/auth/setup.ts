@@ -10,6 +10,8 @@ import { Helmet } from '@middlewares/helmet/enable.helmet';
 import { MorganRegister } from '@middlewares/morgan/morgan.register';
 import { deployNetworks } from '@utils/networks/deploy.networks';
 
+import { repositoryRouters } from './repository.routes';
+
 /**
  * Composable de propiedades y funciones para publicar recursos del servidor **Auth**.
  * 
@@ -39,7 +41,7 @@ export const useSetupAuthServer = (): IGlobalSetupServer => {
     /**
      * Asignación de ruta base para invocación de servicios.
      */
-    const BASE_PATH: string = '/api/v1/app';
+    const BASE_PATH: string = '/api/v1/auth';
 
     //* --- Methods ---
     /**
@@ -92,6 +94,9 @@ export const useSetupAuthServer = (): IGlobalSetupServer => {
      * @name routes
      */
     const routes = (): void => {
+
+        //* Invoicación de servicios
+        app.use(`${BASE_PATH}`, repositoryRouters('welcome'));
 
         //* Controlar peticiones desconocidas
         app.use(NotFound);
