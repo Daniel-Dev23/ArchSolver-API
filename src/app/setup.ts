@@ -6,6 +6,7 @@ import { Compression } from '@middlewares/compression/enable.compression';
 import { Cors } from '@middlewares/cors/enable.cors';
 import { ExpressBodyParser } from '@middlewares/express/body.parser';
 import { Helmet } from '@middlewares/helmet/enable.helmet';
+import { MorganRegister } from '@middlewares/morgan/morgan.register';
 
 /**
  * Composable de propiedades y funciones para publicar recursos del servidor **App**.
@@ -54,6 +55,10 @@ export const useSetupAppServer = (): IGlobalSetupServer => {
      * @name middlewares
      */
     const middlewares = (): void => {
+
+        if (NODE_ENV === 'development') {
+            app.use(MorganRegister('dev'));         //* Registro de información en peticiones HTTP
+        }
 
         app.use(Cors());                            //* Habilitar CORS (Cross-Origin Resource Sharing)
         app.use(Helmet());                          //* Habilitar seguridad en encabezados HTTP
