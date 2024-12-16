@@ -10,6 +10,8 @@ import { Helmet } from '@middlewares/helmet/enable.helmet';
 import { MorganRegister } from '@middlewares/morgan/morgan.register';
 import { deployNetworks } from '@utils/networks/deploy.networks';
 
+import { repositoryRouters } from './repository.routes';
+
 /**
  * Composable de propiedades y funciones para publicar recursos del servidor **App**.
  * 
@@ -93,7 +95,8 @@ export const useSetupAppServer = (): IGlobalSetupServer => {
      */
     const routes = (): void => {
 
-        
+        //* Invoicación de servicios
+        app.use(`${BASE_PATH}`, repositoryRouters('welcome'));
 
         //* Controlar peticiones desconocidas
         app.use(NotFound);
