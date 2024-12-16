@@ -1,6 +1,7 @@
 import express, { Express } from 'express';
 
 import { env } from '@env/envs.handler';
+import { Compression } from '@middlewares/compression/enable.compression';
 import { Cors } from '@middlewares/cors/enable.cors';
 import { ExpressBodyParser } from '@middlewares/express/body.parser';
 
@@ -55,6 +56,7 @@ export const useSetupAppServer = (): IGlobalSetupServer => {
         app.use(Cors());                            //* Habilitar CORS (Cross-Origin Resource Sharing)
         app.use(ExpressBodyParser('json'));         //* Procesamiento de datos JSON
         app.use(ExpressBodyParser('url-encode'));   //* Procesamiento de datos url-encode (form-data | x-www-form-urlencode)
+        app.use(Compression());                     //* Habilita la compresión de respuestas
 
     }
 
