@@ -96,6 +96,7 @@ export const useSetupAppServer = (): IGlobalSetupServer => {
     const routes = (): void => {
 
         //* Invoicación de servicios
+        app.use(`${BASE_PATH}`, repositoryRouters('product'));
         app.use(`${BASE_PATH}`, repositoryRouters('welcome'));
 
         //* Controlar peticiones desconocidas

@@ -1,7 +1,7 @@
 /**
  * Manejador de códigos de estado HTTP versión 2.0.
  */
-export const statusCode: Record<string, number> = {
+export const statusCode: IGlobalStatusCode = {
     CONTINUE: 100,
     SWITCHING_PROTOCOLS: 101,
     OK: 200,
