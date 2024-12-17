@@ -2,6 +2,8 @@ import { Request, Response, NextFunction } from 'express';
 
 import { statusCode } from '@utils/status_code/status.code.handler';
 
+import { AddProductService } from '../services/add.product.service';
+
 /**
  * Controlador que coordina el registro de un nuevo producto.
  * 
@@ -15,11 +17,13 @@ import { statusCode } from '@utils/status_code/status.code.handler';
 */
 export const AddProductController = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
 
-    //TODO: Validar que el nombre de producto exista
+    const response = await AddProductService(req.body);
 
     res.status(statusCode.CREATED);
     res.json({
-        message: '💙 Hello world...'
+        success: true,
+        status_code: statusCode.CREATED,
+        id_product: response
     });
     res.end();
 

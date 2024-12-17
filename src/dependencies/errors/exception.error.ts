@@ -3,7 +3,7 @@
  * @class Exception
  */
 export class Exception extends Error {
-    constructor(name: string, public description?: any) {
+    constructor(name: IGlobalTypeErrors, public description?: any) {
         super();
         
         this.name = name;

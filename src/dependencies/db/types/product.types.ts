@@ -1,4 +1,4 @@
-import { Optional } from 'sequelize';
+import { Model, Optional } from 'sequelize';
 
 /**
  * Definición de interfaz para atributos de la entidad **Producto**.

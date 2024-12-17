@@ -1,8 +1,6 @@
 import { Product } from '../entities/product';
 import { ProductCreationAttributes } from '../types/product.types';
 
-type ProductCreation = typeof Product.prototype; // Tipar una instancia de Product
-
 /**
  * Comando que registra un nuevo producto a base de datos.
  * 
@@ -11,7 +9,9 @@ type ProductCreation = typeof Product.prototype; // Tipar una instancia de Produ
  * @param product - Nuevo producto a registrar.
  * @returns Producto Agregado.
  */
-export const addProduct = async ( product: ProductCreationAttributes ): Promise<ProductCreation> => await Product.create(product);
+export const addProduct = async ( product: ProductCreationAttributes ): Promise<any> => {
+    return await Product.create(product);
+};
 
 /**
  * Comando que obtiene la referencia de un solo producto en base de datos.
@@ -21,4 +21,6 @@ export const addProduct = async ( product: ProductCreationAttributes ): Promise<
  * @param args - Argumentos para configuración de consulta.
  * @returns Producto
  */
-export const getProduct = async ( args: IGlobalFindOptions ): Promise<ProductCreation|null> => await Product.findOne(args);
+export const getProduct = async ( args: IGlobalFindOptions ): Promise<any|null> => {
+    return await Product.findOne(args);
+}
